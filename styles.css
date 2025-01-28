@@ -1,106 +1,107 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    padding-bottom: 50px; /* Prevents footer overlap */
+    font-family: 'Courier New', Courier, monospace;
+    margin: 1;
+    padding: 1; /* this padding if for the line black and sky blue */
+    background-color: #FFA500; /* orange color */
 }
 
+/* Header */
 header {
     display: flex;
-    justify-content: center; /* Centering the logo */
-    align-items: center;
-    background-color: #FFA500; /* Orange color */
-    color: #000000;
-    padding: 5px 60px;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: #000; /* pure black */
+    padding: 40px 100px; /* this where the place the logo and business info */
 }
 
 header .logo img {
-    max-height: 350px; /* Increased size for better visibility */
-    width: auto;
+    max-width: 200%;
+    height: auto;
+    max-height: 100px;      /* logo size */
+}
+
+header .announcement {
+    text-align: center;
+    font-size: 1em; /* annoucemnt font size */
+    color: #fff;
 }
 
 header .time-location {
     text-align: center;
+    font-size: 1.0em;       /* for the digital time */
 }
 
-header .time-location #digital-clock {
-    font-size: 3em;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-header .business-info p {
-    margin: 0;
-    font-size: 2em;
-}
-
+/* Navigation */
 nav {
-    background-color: #87CEEB;
+    background-color: #87CEEB; /* sky blue color */
     text-align: center;
+    position: relative;
+}
+
+nav .menu-toggle {
+    display: none;
+    background-color: #2F2F2F; /* Dark blue */
+   border-top: 2px solid #00008B;
+    color: #2F2F2F;
+    font-size: 2.1em;
+    padding: 30px 30px;
+    cursor: pointer;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 1;
+    padding: 1;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav ul li {
-    margin: 5px 20px;
+    margin: 5px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.1em;
-    padding: 10px 15px;
-    display: inline-block;
+    font-size: 1.0em;
+    padding: 0px 15px; /* sky blue line */
+    display: block;
 }
 
 nav ul li a:hover {
-    background-color: #555;
-    color: #fff;
-    transition: 0.3s ease-in-out;
+    background-color: #FFA500; /* orage */
+    color: #333; /* Dark gray */
 }
 
+/* Footer */
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 0px;          /* this is where the black color line with "© 2025 Top Choice Buildings. All rights reserved." */
     background-color: #333;
-    color: #fff;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    color: #FFA500; /* orage color */
 }
 
-/* Responsive Design */
+/* Responsive Styles */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         text-align: center;
-        padding: 10px;
     }
-    
-    header .logo img {
-        max-height: 150px;
-    }
-    
+
     nav ul {
+        display: none;
         flex-direction: column;
-        align-items: center;
+        background-color: #87CEEB; /* sky blue */
     }
-    
-    nav ul li {
-        margin: 10px 0;
+
+    nav .menu-toggle {
+        display: inline-block;
     }
-    
-    footer {
-        position: relative;
-        padding: 15px;
+
+    nav ul.show {
+        display: flex;
     }
 }
