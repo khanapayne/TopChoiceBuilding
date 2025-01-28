@@ -1,50 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Choice Buildings</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Choice Buildings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Serif', serif;
+      background-color: #F4A261; 
+      color: #fff;
+      text-align: center;
+    }
+    header {
+      background-color: #87CEEB;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header img {
+      height: 50px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 15px;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 8px 12px;
+      display: inline-block;
+      border-radius: 4px;
+    }
+    nav ul li a:hover {
+      background-color: orange;
+      color: black;
+    }
+    .card {
+      background-color: #8B4513;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .digital-clock {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #fff;
+    }
+    .digital-clock span {
+      margin-left: 10px;  /* Adds space between the emoji and time */
+    }
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+  <script>
+    function updateClock() {
+      const clock = document.getElementById('clock');
+      const now = new Date();
+      clock.textContent = now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+  </script>
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <img src="logo-transparent.png" alt="Your Business Logo">
-        </div>
-        <div class="announcement">
-            <p id="announcement-text">🚨 February Sale - 5% OFF! 🚨</p>
-        </div>
-        <div class="time-location">
-            <div id="digital-clock"></div>
-            <div class="business-info">
-                <p>Monday - Friday: 10:00 AM - 5:30 PM</p>
-                <p>Location: 4914 Belton Hwy, Anderson, SC 29621</p>
-                <p>Phone: <a href="tel:+18643143207">864-314-3207</a></p>
-            </div>
-        </div>
-    </header>
+<body onload="updateClock()">
 
-    <!-- Navigation Bar -->
+  <header>
+    <img src="logo-transparent.png" alt="Top Choice Buildings logo-transparent">
     <nav>
-        <button class="menu-toggle">☰ Menu</button>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Inventory</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">3D</a></li>
-            <li><a href="#">Financing</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Reviews</a></li>
-        </ul>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Inventory</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">3D</a></li>
+        <li><a href="#">Financing</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Reviews</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Top Choice Buildings. All rights reserved.</p>
-    </footer>
+  <main>
+    <div class="card">
+      <h1>Business Info</h1>
+      <p><strong>Hours:</strong> Monday - Friday: 10:00 AM - 5:30 PM</p>
+      <p><strong>Location:</strong> 4914 Belton Hwy, Anderson, SC 29621</p>
+      <p><strong>Phone:</strong> <a href="tel:8643143207" style="color: #FFD700;">864-314-3207</a></p>
+    </div>
 
-    <script src="scripts.js"></script>
+    <div class="digital-clock">
+      ⏰ Current Time: <span id="clock"></span>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Top Choice Buildings. All rights reserved.</p>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+
 </body>
 </html>
